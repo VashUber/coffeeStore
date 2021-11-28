@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "title": "Latte",
+        "prices": [
+            {
+                "cost": 90,
+                "volume": "0.5 l"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Americano",
+        "prices": [
+            {
+                "cost": 80,
+                "volume": "0.5 l"
+            }
+        ]
+    }
+]
