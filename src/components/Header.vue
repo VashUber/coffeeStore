@@ -1,14 +1,32 @@
 <template>
   <header class="header">
-    <router-link to="/" class="link__header">Store</router-link>
-    <router-link to="/cart" class="link__header">Cart</router-link>
+    <router-link to="/" class="header__link">Магазин</router-link>
+    <router-link to="/cart" class="header__link"
+      ><img src="../assets/shopping_cart_white_36dp.svg" alt=""
+    /></router-link>
   </header>
 </template>
-<script lang="ts">
-import { defineComponent } from "vue";
+<style lang="scss" scoped>
+.header {
+  background: $blue;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 22px;
 
-export default defineComponent({
-  name: "Header",
-});
-</script>
-<style lang="scss" scoped></style>
+  &__link {
+    color: #fff;
+
+    &_active:not(:last-child) {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    &:last-child {
+      margin-left: auto;
+      margin-top: 3px;
+    }
+  }
+}
+</style>

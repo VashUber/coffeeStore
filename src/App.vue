@@ -5,8 +5,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { computed, onMounted, ref, watch } from "vue";
+<script lang="ts" setup>
+import { onMounted, ref, watch } from "vue";
 import { useStoreItems } from "./store/storeItems";
 import Header from "./components/Header.vue";
 import { useRoute } from "vue-router";
@@ -20,11 +20,8 @@ onMounted(async () => {
 });
 
 watch(route, () => {
-  if (route.path === "/404") is404.value = true;
-  else is404.value = false;
+  is404.value = route.path === "/404" ? true : false;
 });
-
-const items = computed(() => storeItems.getItems);
 </script>
 
 <style lang="scss">

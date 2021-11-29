@@ -1,7 +1,10 @@
 <template>
   <div class="errorPage">
-    <h3 class="errorPage__message">404</h3>
-    <router-link to="/">Back to the store -></router-link>
+    <div class="errorPage__head">
+      <h3 class="errorPage__message">404</h3>
+      <img src="../assets/error_outline_black_48dp.svg" alt="" />
+    </div>
+    <router-link to="/">Вернуться в магазин -></router-link>
   </div>
 </template>
 
@@ -16,6 +19,13 @@
 
   &__message {
     font-size: 32px;
+  }
+
+  &__head {
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 </style>

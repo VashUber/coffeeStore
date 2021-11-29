@@ -1,22 +1,26 @@
 [
-    {
-        "id": "1",
-        "title": "Latte",
-        "prices": [
-            {
-                "cost": 90,
-                "volume": "0.5 l"
-            }
-        ]
-    },
-    {
-        "id": "2",
-        "title": "Americano",
-        "prices": [
-            {
-                "cost": 80,
-                "volume": "0.5 l"
-            }
-        ]
-    }
+  {
+    "id": "1",
+    "title": "Latte",
+    "imgUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/870e47d7c0c6409eb3208d1e1f39d7fc_366x366.jpeg",
+    "description": "Горячий напиток на основе эспрессо с увеличенной порцией молока",
+    "prices": [
+      {
+        "cost": 90,
+        "volume": "0.5 l"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Americano",
+    "imgUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/bc87655534d44acebcbbffab2ee0b822_366x366.jpeg",
+    "description": "Горячий напиток на основе эспрессо",
+    "prices": [
+      {
+        "cost": 80,
+        "volume": "0.5 l"
+      }
+    ]
+  }
 ]
