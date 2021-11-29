@@ -1,7 +1,6 @@
 import { Coffee, Cheesecake } from "../types/index";
 import { defineStore } from "pinia";
 import axios from "axios";
-import { ref } from "@vue/runtime-dom";
 
 export const useStoreItems = defineStore({
   id: "card",

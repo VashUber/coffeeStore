@@ -7,15 +7,20 @@
     />
     <h3 class="product__title">{{ props.item.title }}</h3>
     <p class="product__description">{{ props.item.description }}</p>
+    <Button :text="'Добавить'" class="product__button" @click="addToCart" />
   </div>
 </template>
 <script lang="ts" setup>
 import { defineProps } from "vue";
 import { Cheesecake, Coffee } from "@/types";
+import Button from "@/components/Button.vue";
 
 const props = defineProps<{ item: Cheesecake | Coffee }>();
+const addToCart = () => {
+  console.log(props.item.title);
+};
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .product {
   width: 290px;
   display: flex;
@@ -35,11 +40,16 @@ const props = defineProps<{ item: Cheesecake | Coffee }>();
   }
 
   &__description {
-    margin-top: 10px;
     background: $light_blue;
     padding: 10px;
+    margin-top: 10px;
     border-radius: 10px;
     box-sizing: border-box;
+    min-height: 80px;
+  }
+
+  &__button {
+    margin-top: 10px;
   }
 }
 </style>

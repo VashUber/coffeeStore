@@ -30,5 +30,6 @@ watch(route, () => {
 
 .app {
   font-family: $font;
+  padding-bottom: 20px;
 }
 </style>
