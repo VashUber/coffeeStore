@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, watch } from "vue";
+import {  onMounted, ref, watch } from "vue";
 import { useStoreItems } from "./store/storeItems";
 import Header from "./components/Header.vue";
 import { useRoute } from "vue-router";

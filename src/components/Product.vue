@@ -25,15 +25,30 @@
   </div>
 </template>
 <script lang="ts" setup>
+import uniqid from "uniqid";
 import { defineProps, ref } from "vue";
 import { Product } from "@/types";
+import { useStoreCart } from "@/store/storeCart";
 import Button from "@/components/Button.vue";
 
+const cart = useStoreCart();
 const props = defineProps<{ item: Product }>();
 const currentPrice = ref(props.item.prices[0].cost);
 
 const addToCart = () => {
-  console.log(props.item);
+  const { id, title, imgUrl, type } = props.item;
+  const elem = props.item.prices.find(
+    (elem) => elem.cost === currentPrice.value
+  );
+
+  cart.addItemsToCart({
+    id: uniqid(),
+    title,
+    imgUrl,
+    type,
+    finalPrice: currentPrice.value,
+    volume: elem?.volume,
+  });
 };
 const changeCurrentPrice = (item: { cost: number; volume: string }) => {
   currentPrice.value = item.cost;

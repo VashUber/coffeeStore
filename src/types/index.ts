@@ -11,3 +11,12 @@ export interface Product {
   type: string;
   prices: Array<price>;
 }
+
+export interface CartItem {
+  id: string;
+  title: string;
+  imgUrl: string;
+  type: string;
+  finalPrice: number;
+  volume?: string;
+}
