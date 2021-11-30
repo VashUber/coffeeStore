@@ -15,7 +15,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: $light_blue;
 
   &__message {
     font-size: 32px;

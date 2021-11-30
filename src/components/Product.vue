@@ -42,7 +42,8 @@ const addToCart = () => {
   );
 
   cart.addItemsToCart({
-    id: uniqid(),
+    id,
+    idCart: uniqid(),
     title,
     imgUrl,
     type,
