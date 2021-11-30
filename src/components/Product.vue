@@ -7,17 +7,36 @@
     />
     <h3 class="product__title">{{ props.item.title }}</h3>
     <p class="product__description">{{ props.item.description }}</p>
-    <Button :text="'Добавить'" class="product__button" @click="addToCart" />
+    <div class="product__prices" v-if="props.item.prices.length > 1">
+      <div
+        class="product__option"
+        v-for="item in props.item.prices"
+        :key="`${props.item.title}-${item.cost}`"
+        @click="changeCurrentPrice(item)"
+        :class="{ product__option_active: item.cost === currentPrice }"
+      >
+        {{ item.volume }}
+      </div>
+    </div>
+    <div class="product__bottom">
+      <div class="product__price">{{ currentPrice }} ₽</div>
+      <Button :text="'Добавить'" class="product__button" @click="addToCart" />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { defineProps } from "vue";
-import { Cheesecake, Coffee } from "@/types";
+import { defineProps, ref } from "vue";
+import { Product } from "@/types";
 import Button from "@/components/Button.vue";
 
-const props = defineProps<{ item: Cheesecake | Coffee }>();
+const props = defineProps<{ item: Product }>();
+const currentPrice = ref(props.item.prices[0].cost);
+
 const addToCart = () => {
-  console.log(props.item.title);
+  console.log(props.item);
+};
+const changeCurrentPrice = (item: { cost: number; volume: string }) => {
+  currentPrice.value = item.cost;
 };
 </script>
 <style lang="scss" scoped>
@@ -26,6 +45,7 @@ const addToCart = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 500px;
   justify-self: center;
 
   &__img {
@@ -48,8 +68,40 @@ const addToCart = () => {
     min-height: 80px;
   }
 
-  &__button {
-    margin-top: 10px;
+  &__prices {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  &__option {
+    padding: 5px 8px;
+    background: $light_blue;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background: $blue_middle;
+    }
+
+    &_active {
+      background: $blue_middle;
+    }
+  }
+
+  &__bottom {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    font-size: 24px;
   }
 }
 </style>

@@ -1,18 +1,13 @@
 type price = {
-  cost: string;
+  cost: number;
   volume: string;
 };
 
-interface Product {
+export interface Product {
   id: string;
   title: string;
   description: string;
   imgUrl: string;
-  price?: number;
-}
-
-export interface Cheesecake extends Product {}
-
-export interface Coffee extends Product {
+  type: string;
   prices: Array<price>;
 }

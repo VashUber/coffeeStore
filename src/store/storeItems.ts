@@ -1,11 +1,11 @@
-import { Coffee, Cheesecake } from "../types/index";
+import { Product } from "../types/index";
 import { defineStore } from "pinia";
 import axios from "axios";
 
 export const useStoreItems = defineStore({
   id: "card",
   state: () => ({
-    items: [] as Array<Coffee | Cheesecake>,
+    items: [] as Array<Product>,
   }),
   getters: {
     getItems() {

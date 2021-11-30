@@ -1,27 +1,26 @@
 <template>
   <div class="select" @click="showPopUp">
     <div class="select__current-option">{{ currentOption }}</div>
-    <div class="select__options">
-      <transition-group name="showOptions">
+    <transition name="showOptions" v-show="isVisible">
+      <div class="select__options">
         <div
           class="select__item"
-          v-for="item in option"
+          v-for="item in props.options"
           :key="item"
           @click="selectOption(item)"
-          v-show="isVisible"
         >
           {{ item }}
         </div>
-      </transition-group>
-    </div>
+      </div>
+    </transition>
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
-const option = ["По цене", "По алфавиту", "По популярности"];
-const isVisible = ref(false);
-const currentOption = ref(option[0]);
+import { ref, defineProps } from "vue";
 
+const props = defineProps<{ options: Array<string> }>();
+const isVisible = ref(false);
+const currentOption = ref(props.options[0]);
 const showPopUp = () => (isVisible.value = !isVisible.value);
 const selectOption = (item: string) => (currentOption.value = item);
 </script>
@@ -40,12 +39,16 @@ const selectOption = (item: string) => (currentOption.value = item);
   &__options {
     position: absolute;
     z-index: 999;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
   }
 
   &__item {
     padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.7);
     transition: background 0.4s;
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+    }
 
     &:hover {
       background: $light_blue;
@@ -54,7 +57,7 @@ const selectOption = (item: string) => (currentOption.value = item);
 }
 
 .showOptions-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .showOptions-leave-active {

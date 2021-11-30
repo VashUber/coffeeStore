@@ -1,10 +1,8 @@
 <template>
   <div class="select-wrapper">
-    <Select />
+    <Select :options="options" />
   </div>
   <div class="products-wrapper">
-    <Product v-for="item in items" :item="item" :key="item.id" />
-    <Product v-for="item in items" :item="item" :key="item.id" />
     <Product v-for="item in items" :item="item" :key="item.id" />
   </div>
 </template>
@@ -17,6 +15,7 @@ import { useStoreItems } from "@/store/storeItems";
 
 const storeItems = useStoreItems();
 const items = computed(() => storeItems.getItems);
+const options = ["По цене", "По алфавиту", "По популярности"];
 </script>
 <style lang="scss" scoped>
 .products-wrapper {
