@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import {  onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useStoreItems } from "./store/storeItems";
 import Header from "./components/Header.vue";
 import { useRoute } from "vue-router";
@@ -20,7 +20,7 @@ onMounted(async () => {
 });
 
 watch(route, () => {
-  is404.value = route.path === "/404" ? true : false;
+  is404.value = route.path === "/404";
 });
 </script>
 

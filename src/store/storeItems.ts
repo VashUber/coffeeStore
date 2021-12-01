@@ -18,5 +18,8 @@ export const useStoreItems = defineStore({
         .get("http://localhost:8080/api.json")
         .then((resp) => (this.items = resp.data));
     },
+    filter(type: string) {
+      this.items = this.items.filter(elem => elem.type === type)
+    },
   },
 });

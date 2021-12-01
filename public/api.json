@@ -4,7 +4,7 @@
     "title": "Латте",
     "imgUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/870e47d7c0c6409eb3208d1e1f39d7fc_366x366.jpeg",
     "description": "Горячий напиток на основе эспрессо с увеличенной порцией молока",
-    "type": "coffee",
+    "type": "кофе",
     "prices": [
       {
         "cost": 95,
@@ -25,7 +25,7 @@
     "title": "Американо",
     "imgUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/bc87655534d44acebcbbffab2ee0b822_366x366.jpeg",
     "description": "Горячий напиток на основе эспрессо",
-    "type": "coffee",
+    "type": "кофе",
     "prices": [
       {
         "cost": 80,
@@ -46,7 +46,7 @@
     "title": "Капучино",
     "imgUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/5972d1b78fec44b4a3fae17019c269cf_366x366.jpeg",
     "description": "Горячий напиток на основе эспрессо со вспененным молоком",
-    "type": "coffee",
+    "type": "кофе",
     "prices": [
       {
         "cost": 105,
@@ -67,7 +67,7 @@
     "title": "Ванильный капучино",
     "imgUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/d6bf3f54833241ca98dfe922a6469ad9_366x366.jpeg",
     "description": "Горячий напиток на основе эспрессо со вспененным молоком и сиропом со вкусом ванили",
-    "type": "coffee",
+    "type": "кофе",
     "prices": [
       {
         "cost": 115,
@@ -88,7 +88,7 @@
     "title": "Чизкейк Нью-Йорк",
     "imgUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Desserts/ru-RU/bff11e98-1ee7-4d9f-aa73-1923a9c85bb9.jpg",
     "description": "Мы перепробовали тысячу десертов и наконец нашли любимца гостей — нежнейший творожный чизкейк.",
-    "type": "coffee",
+    "type": "чизкейк",
     "prices": [
       {
         "cost": 130,

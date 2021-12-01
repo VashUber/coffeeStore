@@ -1,4 +1,4 @@
-import { CartItem } from "../types/index";
+import { CartItem } from "@/types";
 import { defineStore } from "pinia";
 
 export const useStoreCart = defineStore({

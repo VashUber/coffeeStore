@@ -11,7 +11,12 @@
       <div>{{ props.item.volume }}</div>
     </div>
     <div class="cartProduct__right">
-      <button class="cartProduct__remove-button" @click="removeItem(props.item.idCart)">X</button>
+      <button
+        class="cartProduct__remove-button"
+        @click="removeItem(props.item.idCart)"
+      >
+        X
+      </button>
       <div class="cartProduct__price">{{ props.item.finalPrice }} ₽</div>
     </div>
   </div>
@@ -21,10 +26,10 @@ import { defineProps } from "vue";
 import { CartItem } from "@/types";
 import { useStoreCart } from "@/store/storeCart";
 
-const storeCart = useStoreCart()
+const storeCart = useStoreCart();
 const removeItem = (id: string) => {
-    storeCart.removeItemFromCart(id)
-}
+  storeCart.removeItemFromCart(id);
+};
 const props = defineProps<{ item: CartItem }>();
 </script>
 <style lang="scss" scoped>

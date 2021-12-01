@@ -63,6 +63,8 @@ const changeCurrentPrice = (item: { cost: number; volume: string }) => {
   align-items: center;
   height: 500px;
   justify-self: center;
+  background: #fff;
+  border-radius: 20px;
 
   &__img {
     transition: transform 0.4s;
