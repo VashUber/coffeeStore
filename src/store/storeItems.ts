@@ -19,7 +19,7 @@ export const useStoreItems = defineStore({
         .then((resp) => (this.items = resp.data));
     },
     filter(type: string) {
-      this.items = this.items.filter(elem => elem.type === type)
+      if (type) this.items = this.items.filter((elem) => elem.type === type);
     },
   },
 });

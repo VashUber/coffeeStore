@@ -12,22 +12,24 @@
 </template>
 <script lang="ts" setup>
 import Button from "@/components/Button.vue";
-import { ref } from "vue";
+import { ref, watch, onUnmounted } from "vue";
 import { useStoreItems } from "@/store/storeItems";
 
 const filters = ["кофе", "чизкейк"];
 const currentFilter = ref("");
 const storeItems = useStoreItems();
+
+watch(currentFilter, async (current: string) => {
+  await storeItems.setItems();
+  storeItems.filter(current);
+});
 const setFilter = async (type: string) => {
-  if (type === currentFilter.value) {
-    currentFilter.value = "";
-    await storeItems.setItems();
-  } else {
-    await storeItems.setItems();
-    storeItems.filter(type);
-    currentFilter.value = type;
-  }
+  if (currentFilter.value === type) currentFilter.value = "";
+  else currentFilter.value = type;
 };
+onUnmounted(async () => {
+  await storeItems.setItems();
+});
 </script>
 <style lang="scss" scoped>
 .filter {
@@ -44,3 +46,6 @@ const setFilter = async (type: string) => {
   }
 }
 </style>
+
+function unmounted(arg0: () => void) { throw new Error("Function not
+implemented."); }
