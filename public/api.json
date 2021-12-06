@@ -18,7 +18,8 @@
         "cost": 130,
         "volume": "0.5 л"
       }
-    ]
+    ],
+    "countPurchases": 54
   },
   {
     "id": "2",
@@ -39,7 +40,8 @@
         "cost": 110,
         "volume": "0.5 л"
       }
-    ]
+    ],
+    "countPurchases": 24
   },
   {
     "id": "3",
@@ -60,7 +62,8 @@
         "cost": 135,
         "volume": "0.5 л"
       }
-    ]
+    ],
+    "countPurchases": 64
   },
   {
     "id": "4",
@@ -81,7 +84,8 @@
         "cost": 150,
         "volume": "0.5 л"
       }
-    ]
+    ],
+    "countPurchases": 14
   },
   {
     "id": "5",
@@ -94,6 +98,7 @@
         "cost": 130,
         "volume": "100 грамм"
       }
-    ]
+    ],
+    "countPurchases": 59
   }
 ]

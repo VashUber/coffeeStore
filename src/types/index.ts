@@ -10,6 +10,7 @@ export interface Product {
   imgUrl: string;
   type: string;
   prices: Array<price>;
+  countPurchases: number;
 }
 
 export interface CartItem {

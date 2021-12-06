@@ -17,6 +17,7 @@ const is404 = ref(false);
 
 onMounted(async () => {
   await storeItems.setItems();
+  storeItems.sort("По цене");
 });
 
 watch(route, () => {

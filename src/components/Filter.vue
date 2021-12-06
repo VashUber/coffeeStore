@@ -46,6 +46,3 @@ onUnmounted(async () => {
   }
 }
 </style>
-
-function unmounted(arg0: () => void) { throw new Error("Function not
-implemented."); }

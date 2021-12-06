@@ -3,7 +3,9 @@
     <router-link to="/" class="header__link">Магазин</router-link>
     <router-link to="/cart" class="header__link">
       <img src="../assets/shopping_cart_white_36dp.svg" alt="" />
-      <span v-if="count > 0" class="header__count">{{ count }}</span>
+      <transition name="show-count">
+        <span v-show="count > 0" class="header__count">{{ count }}</span>
+      </transition>
     </router-link>
   </header>
 </template>
@@ -57,5 +59,13 @@ const count = computed(() => storeItems.cart.length);
       margin-top: 3px;
     }
   }
+}
+
+.show-count-enter-active {
+  transition: all 0.4s ease-in-out;
+}
+.show-count-enter-from {
+  transform: scale(1.5);
+  opacity: 0;
 }
 </style>

@@ -16,13 +16,19 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, defineProps } from "vue";
+import { ref, defineProps, watch, onMounted } from "vue";
+import { useStoreItems } from "@/store/storeItems";
 
+const storeItems = useStoreItems();
 const props = defineProps<{ options: Array<string> }>();
 const isVisible = ref(false);
 const currentOption = ref(props.options[0]);
 const showPopUp = () => (isVisible.value = !isVisible.value);
 const selectOption = (item: string) => (currentOption.value = item);
+
+watch(currentOption, (current) => {
+  storeItems.sort(current);
+});
 </script>
 <style lang="scss">
 .select {
